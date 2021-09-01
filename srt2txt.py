@@ -18,8 +18,12 @@ for dire in dirs:
 
     file_name_save = path+dire+'.txt'
     with open(file_name_save, 'w') as f:
+        f.write('#'*100)
+        f.write('\n')
         f.write(dire)
-
+        f.write('\n')
+        f.write('#'*100)
+        f.write('\n\n\n')
     for file in files:
         if file[-4:] != '.srt':
             continue
