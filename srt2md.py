@@ -1,3 +1,10 @@
+import sys
+import os
+# sys.path
+# sys.path.append('/Users/xxx/Documents/Financial Engineering and Artificial Intelligence in Python/')
+
+path = "/Users/xxx/Documents/lessons/Financial Engineering and Artificial Intelligence in Python/"
+
 dirs = os.listdir(path)
 dirs = sorted(dirs)
 
