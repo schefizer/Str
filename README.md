@@ -65,3 +65,6 @@ But the first step before you do any of that is to answer the question, what is 
 Usually most laypeople have a general understanding of this.   
 They know about stock prices.   
 They know about general ideas like buy low and sell high.   
+
+# usage
+run the code directly.
