@@ -3,7 +3,7 @@ import os
 # sys.path
 # sys.path.append('/Users/xxx/Documents/Financial Engineering and Artificial Intelligence in Python/')
 
-path = "/Users/wangyu/Documents/lessons/Financial Engineering and Artificial Intelligence in Python/"
+path = "/Users/xxx/Documents/lessons/Financial Engineering and Artificial Intelligence in Python/"
 
 dirs = os.listdir(path)
 dirs = sorted(dirs)
@@ -51,10 +51,6 @@ for dire in dirs:
 
             result = '\n'.join(line)
 
-#         print(dire, '\n')
-#         print(file, '\n')
-#         print(result)
-#         print('\n', '*'*50, '\n\n')
         with open(file_name_save, 'a+') as f:
             f.write(file)
             f.write('\n\n\n')
