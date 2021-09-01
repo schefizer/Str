@@ -15,8 +15,9 @@ for dire in dirs:
     files = os.listdir(path_sub)
     files = sorted(files)
     s = []
-
     file_name_save = path+dire+'.md'
+    with open(file_name_save, 'w') as f:
+        pass
     for file in files:
         if file[-4:] != '.srt':
             continue
@@ -31,28 +32,32 @@ for dire in dirs:
         length = len(myset)
 
         line = []
+        cnt=1
         for line_num in range(length):
             if myset[line_num][-1] not in ['.', '?', '!', ] and line_num < length-2:
                 if myset[line_num]==temp_1:
                     line[-1]+=' '+myset[line_num+1]
                     temp_1=myset[line_num+1]
                     continue
-                temp='  '+ myset[line_num]
-                temp = ' '.join([temp, myset[line_num+1]])
-                temp+='\n'
+                temp=myset[line_num]
+                temp = ''.join([myset[line_num], myset[line_num+1]])
                 line.append(temp)
                 temp_1=myset[line_num+1]
             elif myset[line_num]==temp_1:
+                line[-1]=str(cnt) + ' - - '+ line[-1]
+                cnt+=1
+                line.append('&nbsp;')
                 continue
             else:
-                temp='  '+ myset[line_num]
-                temp+='\n'
-                line.append(temp)
+                line.append(myset[line_num])
+                line[-1]=str(cnt) + ' - - '+ line[-1]
+                cnt+=1
+                line.append('&nbsp;')
 
-            result = '\n'.join(line)
+        result = '\n'.join(line)
 
         with open(file_name_save, 'a+') as f:
-            title='# ' + file[:-4]
+            title='## ' + file[:-4]
             f.write(title)
             f.write('\n&nbsp;\n')
             f.write(result)
